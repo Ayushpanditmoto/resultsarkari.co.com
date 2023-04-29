@@ -1,5 +1,5 @@
 {
-  "name": "resultsarkari.co.com",
+  "name": "resultsarkari",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,17 +9,33 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
+    "@next/mdx": "^13.2.4",
+    "@supabase/supabase-js": "^2.21.0",
     "@types/node": "18.16.3",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
+    "@vercel/analytics": "^1.0.0",
     "autoprefixer": "10.4.14",
     "eslint": "8.39.0",
-    "eslint-config-next": "13.3.2",
-    "next": "13.3.2",
+    "eslint-config-next": "13.3.1",
+    "markdown-it": "^13.0.1",
+    "next": "13.3.1",
+    "next-seo": "^5.15.0",
+    "nextjs-progressbar": "^0.0.16",
+    "node-cache": "^5.1.2",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "styled-components": "^5.3.8",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^12.2.3",
+    "@types/styled-components": "^5.1.26",
+    "babel-plugin-styled-components": "^2.0.7"
   }
 }
