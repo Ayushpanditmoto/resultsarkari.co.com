@@ -32,9 +32,9 @@ function PostSection({
       <PostBox title="Answer Key" data={answerkeys} viewall="/answer-key" />
       <PostBox title="Syllabus" data={syllabi} viewall="/syllabus" />
       <PostBox title="Admission" data={admissions} viewall="/admissions" />
-      <PostBox title="Scholarship" data={importants} viewall="/scholarship" />
+      {/* <PostBox title="Scholarship" data={importants} viewall="/scholarship" /> */}
       <PostBox title="Government" data={governments} viewall="/government" />
-      <PostBox title="Important" data={importants} viewall="/important" />
+      {/* <PostBox title="Important" data={importants} viewall="/important" /> */}
     </PostC>
   );
 }
