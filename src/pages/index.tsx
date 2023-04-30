@@ -48,7 +48,7 @@ export default function Home({ result, admit, admissions, answerkeys, government
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const AdmitCard = cache.get(Category.AdmitCard);
   const Result = cache.get(Category.Result);
   const Admission = cache.get(Category.Admission);
@@ -79,10 +79,6 @@ export async function getServerSideProps() {
     const { data: AllData, error: err } = await supabase
     .from('posts')
     .select('*')
-    
-  
-
-    console.log(AllData)
 
     if (err) {
       console.log(err)
@@ -152,6 +148,7 @@ export async function getServerSideProps() {
       jobs: jobs,
       syllabi: syllabi,
     },
+    revalidate: 10, // In seconds
   }
 }
 }
