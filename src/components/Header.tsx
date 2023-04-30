@@ -19,7 +19,7 @@ function Header() {
       {/* Mobile navbar */}
       <MobileNavbar>
       <Link href="/">
-          Esarkari
+          Result Sarkari
         </Link>
         <MenuButton onClick={() => setShowNav(!showNav)}>
           <FaBars />
@@ -31,9 +31,9 @@ function Header() {
             <Link href="/about">
                 About
             </Link>
-            <Link href="/services">
+            {/* <Link href="/services">
                 Services
-            </Link>
+            </Link> */}
             <Link href="/contact">
                 Contact
             </Link>
@@ -43,7 +43,7 @@ function Header() {
       {/* Desktop navbar */}
       <DesktopNavbar>
         <Link href="/">
-          Esarkari
+        Result Sarkari
         </Link>
         <NavLinks>
           <Link href="/about"

@@ -1,77 +1,99 @@
-import CenterC from '@/Layout/center'
-import PostContainer from '@/Layout/layout'
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-function Contact() {
+const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(name, email, subject, message);
+    const mailtoLink = `mailto:helpesarkari@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    window.open(mailtoLink);
+  }
+
   return (
-    <div>
-      <CenterC>
-        <PostContainer>
-
-<FormC>
-
-      <h1>Contact</h1>
-      
-      <p>Sent a Message</p>
-
-      <form name="contact" method="POST" data-netlify="true">
-        <p>
-          <label>Your Name: <input type="text" name="name" /></label>
-        </p>
-        <p>
-          <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        
-        <p>
-         
-          <label>Message: <textarea name="message"></textarea></label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
+    <ContactContainer>
+      <h1>Contact Us</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Subject"
+          value={subject}
+          onChange={(e) => setSubject(e.target.value)}
+        />
+        <textarea
+          placeholder="Message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        ></textarea>
+        <button type="submit">Send</button>
       </form>
-
-      </FormC>
-
-      </PostContainer>
-
-      </CenterC>
-        
-    </div>
-  )
+    </ContactContainer>
+  );
 }
 
-export default Contact
+export default Contact;
 
-const FormC = styled.div`
+const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  max-width: 800px;
-  margin: 30 auto;
-  align-items: center;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-  padding: 1rem 2rem;
-  background-color: #ffffff;
-  color: #000000;
-  div{
-      a{
-          font-size: 1.5rem;
-          font-weight: 700;
-          color: #000000;
-          text-decoration: none;
-      }
+
+  h1 {
+    margin: 2rem;
+    font-size: 2rem;
   }
-  input{
-      padding: 0.5rem;
-      margin: 0.5rem;
-      border: 1px solid #000000;
-      border-radius: 5px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+    
+    padding: 2rem;
+
+    input,
+    textarea {
       width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
 
+    textarea {
+      height: 200px;
+    }
+
+    button {
+      background-color: #000;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #333;
+      }
+    }
   }
-`
-
+`;

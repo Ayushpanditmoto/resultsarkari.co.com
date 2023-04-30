@@ -1,11 +1,3 @@
-import React from 'react'
-import {NextSeo} from 'next-seo'
-import MarkdownIt from 'markdown-it';
-import PostContainer from '@/Layout/layout';
-import CenterC from '@/Layout/center';
-// import supabase from '@/config/Supabase.config';
-
-const markdown = `
 # About Resultsarkari.co.com
 
 Resultsarkari.co.com is a leading online platform that provides the latest and updated information on government jobs, exam results, and educational news in India. Our website is designed to provide easy access to job notifications, exam results, and educational updates for students, job seekers, and other interested parties.
@@ -36,40 +28,3 @@ We believe that our platform offers a unique value proposition for users who are
 We are always interested in hearing from our users. If you have any questions, comments, or feedback, please feel free to contact us using the contact form on our website. We appreciate your feedback and look forward to hearing from you.
 
 Thank you for choosing Resultsarkari.co.com for your information needs. We hope that our platform will be useful to you in your education and employment journey.
-`;
-
-
-
-
-
-function AboutPage() {
-  const md = new MarkdownIt({
-    html: false,
-    linkify: true,
-  });
-  const html = md.render(markdown);
-  return (
-    <>
-    <NextSeo 
-    title="About" 
-    description="About Page"
-    />
-    {/* <h3>About Page</h3> */}
-    <CenterC>
-    <PostContainer>
-    <div dangerouslySetInnerHTML={{__html: html}}></div>
-    </PostContainer>
-    </CenterC>
-    </>
-  )
-}
-
-
-
-
-export default AboutPage
-
-
-
-
-

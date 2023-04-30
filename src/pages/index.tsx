@@ -16,13 +16,13 @@ export default function Home({ result, admit, admissions, answerkeys, government
   return (
     <>
       <DefaultSeo 
-      title="Esarkari.in"
-      description="Esarkari.in is a website for all the latest government jobs, Sarkari Naukri, Sarkari Result, Admit Card, Answer Key, Syllabus, and more."
+      title="Result Sarkari Naukri"
+      description="Result Sarkari Naukri is a website that provides all the latest government jobs, admit cards, results, answer keys, syllabus, and admission information."
       openGraph={{
         type: 'website',
         locale: 'en_IE',
-        url: 'https://esarkari.in/',
-        site_name: 'Esarkari.in',
+        url: 'https://www.resultsarkari.co.com/',
+        site_name: 'Result Sarkari Naukri',
       }}
       twitter={{
         handle: '@handle',
@@ -31,7 +31,7 @@ export default function Home({ result, admit, admissions, answerkeys, government
       }}
       />
       <main>
-        <AppSection/>
+        {/* <AppSection/> */}
         <PostSection 
         result={result}
         admit={admit}

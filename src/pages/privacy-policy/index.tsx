@@ -5,23 +5,46 @@ import { NextSeo } from 'next-seo'
 import React from 'react'
 
 const markdown = `
-## Privacy Policy
+# Privacy Policy
 
-Your privacy is important to us. It is ChatGPT's policy to respect your privacy regarding any information we may collect from you through our app, ChatGPT.
+At Resultsarkari.co.com, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and disclose information about you when you use our website.
 
-We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will be used.
+## Information we collect
 
-We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we’ll protect within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use or modification.
+We may collect information about you directly from you or from third-party sources. The information we collect may include:
 
-We don’t share any personally identifying information publicly or with third-parties, except when required to by law.
+- Name, email address, and other contact information
+- IP address, browser type, and device information
+- Usage information, such as pages visited and links clicked
 
-Our app may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.
+## How we use your information
 
-You are free to refuse our request for your personal information, with the understanding that we may be unable to provide you with some of your desired services.
+We use the information we collect to:
 
-Your continued use of our app will be regarded as acceptance of our practices around privacy and personal information. If you have any questions about how we handle user data and personal information, feel free to contact us.
+- Provide and improve our services
+- Personalize your experience
+- Communicate with you
+- Analyze usage and performance of our website
 
-This policy is effective as of 1 January 2021.
+## Disclosure of your information
+
+We may disclose your information to third-party service providers who help us provide our services, such as hosting and analytics providers. We may also disclose your information to comply with legal obligations or protect our rights.
+
+## Your choices
+
+You can choose not to provide certain information, but this may limit your ability to use some of our services. You can also opt out of receiving promotional communications from us.
+
+## Security
+
+We take reasonable measures to protect your information from unauthorized access or disclosure. However, no security measure is completely foolproof.
+
+## Changes to this Privacy Policy
+
+We may update this Privacy Policy from time to time. If we make material changes, we will notify you by email or by posting a notice on our website.
+
+## Contact Us
+
+If you have any questions or concerns about our Privacy Policy, please contact us at privacy@resultsarkari.co.com.
 
 `;
 
