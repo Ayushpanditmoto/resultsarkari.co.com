@@ -1,21 +1,31 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { PostType } from "@/types/PostType";
-import { GetStaticPaths } from "next";
+import { 
+    GetStaticPaths,
+    GetStaticProps,
+    GetStaticPropsContext,
+    GetStaticPropsResult,
+    InferGetStaticPropsType,
+    NextPage,
+    NextPageContext,
+ } from "next";
 import MarkdownIt from "markdown-it";
 import PostContainer from "@/Layout/layout";
 import styled from "styled-components";
 import { NextSeo } from "next-seo";
 import supabase from "@/config/Supabase.config";
 
+//Deafault value
+
 function SinglePost({ post }: { post: PostType }) {
-  console.log(post);
   const md = new MarkdownIt({
     html: true,
     linkify: true,
   });
 
-
+    
+  
   return (
     <>
       <NextSeo title={post.title} description={post.desc} />
@@ -145,42 +155,24 @@ const PostContain = styled.div`
 export default SinglePost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { data: posts } = await supabase.from("posts").select("slug");
-
-  if (posts != undefined) {
-    const paths = posts.map((post) => ({
-      params: { slug: post.slug },
+    const { data, error } = await supabase.from("posts").select("slug");
+    const paths = data!.map((post) => ({
+        params: { slug: post.slug },
     }));
-    return {
-      paths,
-     fallback: false,
+    return { paths, fallback: false };
     };
-  } else {
-    return { paths: [], fallback: false };
-  }
+
+export const getStaticProps: GetStaticProps = async ({
+    params,
+}: GetStaticPropsContext) => {
+    const { slug } = params!;
+    const { data } = await supabase
+        .from("posts")
+        .select()
+        .filter("slug", "eq", slug);
+    const post = data![0];
+    return {
+        props: { post },
+    };
 };
 
-export const getStaticProps = async ({
-  params,
-}: {
-  params: { slug: string };
-}) => {
-  const { data: post } = await supabase
-    .from("posts")
-    .select("*")
-    .eq("slug", params.slug)
-    .single();
-
-    if(post == undefined){
-        return {
-            notFound: true,
-        };
-    }
-
-  return {
-    props: {
-      post,
-    },
-    revalidate: 60,
-  };
-};
