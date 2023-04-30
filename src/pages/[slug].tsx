@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { useRouter } from 'next/router'
 import { PostType } from '@/types/PostType'
 import { GetStaticPaths } from 'next'
@@ -17,6 +17,12 @@ function SinglePost({ post }: { post: PostType }) {
             linkify: true,
         }
     );
+
+    //Build the page 
+    useEffect(() => {
+        
+    }, [post])
+
   return (
     <>
     <NextSeo title={post.title} description={post.desc} />
