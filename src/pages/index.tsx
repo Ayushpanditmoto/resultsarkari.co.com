@@ -110,7 +110,7 @@ export async function getStaticProps() {
       answerkeys: answerkeys,
       governments: governments,
       importants: importants,
-      jobs: jobs,
+      jobs: jobs.slice(0, 8),
       syllabi: syllabi,
     },
     revalidate: 10, // In seconds

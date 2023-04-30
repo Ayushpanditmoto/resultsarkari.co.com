@@ -98,6 +98,15 @@ const PostBoxC = styled.div`
       font-size: 0.9rem;
       padding: 0.3rem;
       font-weight: 400;
+      border-bottom: 1px solid #e5e5e5;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #e1e1e1;
+        animation: 0.5s ease-in-out 0s 1 normal none running pulse;
+        
+      }
+      
       // margin-bottom: 1rem;
       span {
         display: inline-block;
@@ -106,6 +115,7 @@ const PostBoxC = styled.div`
         background-color: #646464;
         border-radius: 50%;
         margin-right: 0.5rem;
+       
       }
     }
   }
