@@ -49,33 +49,7 @@ export default function Home({ result, admit, admissions, answerkeys, government
 }
 
 export async function getStaticProps() {
-  const AdmitCard = cache.get(Category.AdmitCard);
-  const Result = cache.get(Category.Result);
-  const Admission = cache.get(Category.Admission);
-  const AnswerKey = cache.get(Category.AnswerKey);
-  const Government = cache.get(Category.Government);
-  const Important = cache.get(Category.Important);
-  const Job = cache.get(Category.Job);
-  const Syllabus = cache.get(Category.Syllabus);
-
-  if (AdmitCard!= undefined && Result!= undefined && Admission!= undefined && AnswerKey!= undefined && Government!= undefined && Important!= undefined && Job!= undefined && Syllabus!= undefined) {
-    // If data is present in cache, return it
-    console.log('from cache')
-    return {
-      props: {
-      result: Result,
-      admit: AdmitCard,
-      admissions: Admission,
-      answerkeys: AnswerKey,
-      governments: Government,
-      importants: Important,
-      jobs:   Job,
-      syllabi: Syllabus,
-        
-      },
-    };
-  } else {
-  //fetch all posts
+  
     const { data: AllData, error: err } = await supabase
     .from('posts')
     .select('*')
@@ -126,16 +100,7 @@ export async function getStaticProps() {
     });
 
     console.log("Loading from DB")
-    // Set data in cache
-    const time=1 // 3 minutes
-    cache.set(Category.Result, result, time);
-    cache.set(Category.AdmitCard, admit, time);
-    cache.set(Category.Admission, admissions, time);
-    cache.set(Category.AnswerKey, answerkeys, time);
-    cache.set(Category.Government, governments, time);
-    cache.set(Category.Important, importants, time);
-    cache.set(Category.Job, jobs, time);
-    cache.set(Category.Syllabus, syllabi, time);
+   
 
   return {
     props: {
@@ -151,4 +116,4 @@ export async function getStaticProps() {
     revalidate: 10, // In seconds
   }
 }
-}
+
