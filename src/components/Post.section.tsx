@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PostBox from "./PostBox";
-import { PostType } from "@/Types/Post";
+import { PostType } from "@/types/PostType";
 
 type Props = {
   result: PostType[];

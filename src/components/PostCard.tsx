@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Link from 'next/link';
-import { PostType } from "@/Types/Post";
+import { PostType } from "@/types/PostType";
 
 function PostCard({ posts }: { posts: PostType[] }) {
   console.log(posts);
