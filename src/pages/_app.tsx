@@ -6,10 +6,19 @@ import Footer from '@/components/Footer';
 import styled from 'styled-components';
 import NextNProgress from 'nextjs-progressbar';
 import { Analytics } from '@vercel/analytics/react';
+import Script from 'next/script';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+    <Script src="https://www.googletagmanager.com/gtag/js?id=G-CM9M8SRELF" strategy="lazyOnload"/>
+    <Script strategy="lazyOnload">
+      {`window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CM9M8SRELF');`}
+    </Script>
       <DefaultSeo 
       title="Next.js Blog"
       description="Next.js Blog"
@@ -25,7 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
         cardType: 'summary_large_image',
       }}
       />
-    {/* <GlobalStyles> */}
+   
     <NextNProgress
     color="#29D"
     startPosition={0.3}
