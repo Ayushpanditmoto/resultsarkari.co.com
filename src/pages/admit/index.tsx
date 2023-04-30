@@ -10,6 +10,7 @@ type AdmitType = {
         id: number,
         title: string,
         slug: string,
+        created_at: string,
     }[]
 }
 
@@ -19,14 +20,22 @@ function AdmitPage({ admit }: AdmitType) {
         <PostC>
     <PostContainer>
             <h1>Admit Card</h1>
-            <div>
+            <ul>
                 {admit.map((admit) => (
-                    <div key={admit.id}>
+                    <li className='text-container' key={admit.id}>
                         <Link href={`/${admit.slug}`}>{admit.title}</Link>
-                    </div>
+                        <div>{
+                        new Date(admit.created_at).toLocaleDateString('en-US',{
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        })
+                        
+                        }</div>
+                    </li>
                 ))}
 
-            </div>
+            </ul>
     </PostContainer>
         </PostC>
     </>
@@ -52,8 +61,31 @@ export const getStaticProps = async () => {
 
 
 const PostC = styled.div`
-   margin:0 auto;
-   margin-top: 2rem;
+    margin:0 auto;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     max-width: 800px;
+    ul {
+        list-style: number;
+        padding: 0;
+        margin: 0;
+    }
+    .text-container {
+        margin-bottom: 1rem;
+        background-color: var(--primary-color);
+        padding: 1rem;
+        border-radius: 5px;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+    
 `

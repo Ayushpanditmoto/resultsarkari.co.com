@@ -6,7 +6,6 @@ function PostContainer({children}: {children: React.ReactNode}) {
     <>
         <PostC>
             {children}
-            
         </PostC>
     </>
   )
@@ -26,18 +25,16 @@ const PostC = styled.div`
     padding: 1rem 1.3rem;
     background-color: #ffffff;
     color: #000000;
-    div{
-        a{
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #000000;
-            text-decoration: none;
-
-        }
-
-    }
     img{
         padding: 1rem 0;
+    }
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        @media (max-width: 768px) {
+        font-size: 1.5rem;
+        }
     }
 
 `
