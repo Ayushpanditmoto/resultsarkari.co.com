@@ -129,6 +129,15 @@ const PostContain = styled.div`
             font-weight: 400;
             padding: 0.5rem;
             border: 1px solid #000;
+            a{
+                color: var(--primary-color);
+                font-size: 1rem;
+                font-weight: 400;
+                margin-bottom: 0.5rem;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
     }
 

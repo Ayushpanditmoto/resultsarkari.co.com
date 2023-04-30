@@ -101,28 +101,28 @@ export async function getServerSideProps() {
     AllData?.forEach((post) => {
       switch (post.category) {
         case Category.Result:
-          result.push(post);
+          result.unshift(post);
           break;
         case Category.AdmitCard:
-          admit.push(post);
+          admit.unshift(post);
           break;
         case Category.Admission:
-          admissions.push(post);
+          admissions.unshift(post);
           break;
         case Category.AnswerKey:
-          answerkeys.push(post);
+          answerkeys.unshift(post);
           break;
         case Category.Government:
-          governments.push(post);
+          governments.unshift(post);
           break;
         case Category.Important:
-          importants.push(post);
+          importants.unshift(post);
           break;
         case Category.Job:
-          jobs.push(post);
+          jobs.unshift(post);
           break;
         case Category.Syllabus:
-          syllabi.push(post);
+          syllabi.unshift(post);
           break;
         default:
           break;
