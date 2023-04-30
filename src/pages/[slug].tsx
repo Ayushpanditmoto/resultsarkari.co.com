@@ -20,7 +20,7 @@ function SinglePost({ post }: { post: PostType }) {
 
     //Build the page 
     useEffect(() => {
-        
+
     }, [post])
 
   return (
@@ -166,11 +166,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
             const paths = posts.map((post) => ({
                 params: { slug: post.slug },
             }))
-            return { paths, fallback: false }
+            return { 
+                paths, 
+                
+                fallback: false,
+                
+            }
             
         }
         else{
-            return { paths: [], fallback: false }
+            return { paths: [], fallback: false,
+             }
         }
 }
 
@@ -185,6 +191,8 @@ export const getStaticProps = async ({ params}: { params: { slug: string }
         return {
             props: {
                 post
-            }
+
+            },
+            revalidate: 1, 
         }
 }
