@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import PostContainer from '@/Layout/layout'
-import supabase from '@/supabase.config'
+import supabase from '@/config/Supabase.config';
 import Link from 'next/link'
+import Category from '@/types/PostEnum';
 
 type AdmitType = {
     admit: {
@@ -35,14 +36,16 @@ function AdmitPage({ admit }: AdmitType) {
 export default AdmitPage
 
 export const getStaticProps = async () => {
-    const { data: admit } = await supabase
-    .from('admits')
+    const { data: posts } = await supabase
+    .from('posts')
     .select('*')
+    .eq('category', Category.Syllabus)
     .order('id', { ascending: false })
+
 
     return {
         props: {
-            admit
+            admit: posts,
         }
     }
 }

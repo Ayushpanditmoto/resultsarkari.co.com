@@ -40,7 +40,7 @@ const PostContain = styled.div`
     @media (max-width: 768px) {
         padding: 0 0.5rem;
     }
-
+    
     h1 {
         font-size: 1.7rem;
         font-weight: 700;
@@ -96,6 +96,23 @@ const PostContain = styled.div`
         }
     }
 
+    ol {
+        margin-bottom: 1rem;
+        li {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            a{
+                color: var(--primary-color);
+                font-size: 1rem;
+                font-weight: 400;
+                margin-bottom: 0.5rem;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
     table {
         width: 100%;
         border-collapse: collapse;
