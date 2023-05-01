@@ -5,8 +5,8 @@ function FooterOne() {
   return (
     <FooterContainer>
         <div>
-            <h1>Esarkari.in</h1>
-            <p>Esarkari.in is a website where you can find all the latest gove
+            <h1>resultsarkari.co.com</h1>
+            <p>resultsarkari.co.com is a website where you can find all the latest gove
             </p>
             <p>
             The job market in India has been hit hard by the COVID-19 pandemic, causing many small businesses and multinational companies to reconsider their staffing requirements. In August 2021 alone, over 1.5 million people in rural and urban areas lost their jobs.

@@ -24,7 +24,7 @@ function Footer() {
 
         </ul>
         <p>
-          © {year} <Link href="/">Esarkari.in</Link>
+          © {year} <Link href="/">resultsarkari.co.com</Link>
         </p>
       </FooterContainer>
     </>
