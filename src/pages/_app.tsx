@@ -19,6 +19,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
       gtag('config', 'G-VHGYMG4ETC');`}
     </Script>
+    {/* Ads Script */}
+
+    <Script id='ads' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5179840175661904" crossOrigin="anonymous"></Script>
+
       <DefaultSeo 
       title="Next.js Blog"
       description="Next.js Blog"
