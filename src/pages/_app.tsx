@@ -11,13 +11,13 @@ import Script from 'next/script';
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-    <Script id="my-script" src="https://www.googletagmanager.com/gtag/js?id=G-CM9M8SRELF" strategy="lazyOnload"/>
+    <Script id="my-script" src="https://www.googletagmanager.com/gtag/js?id=G-VHGYMG4ETC" strategy="lazyOnload"/>
     <Script id="my-script1" strategy="lazyOnload">
       {`window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-CM9M8SRELF');`}
+      gtag('config', 'G-VHGYMG4ETC');`}
     </Script>
       <DefaultSeo 
       title="Next.js Blog"
