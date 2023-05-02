@@ -2,20 +2,23 @@ import { GetServerSideProps } from "next";
 import supabase from "@/config/Supabase.config";
 
 
+
 export default function Sitemap() {
   return null;
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+export const   getServerSideProps: GetServerSideProps = async ({ res }) => {
+    const sitemap = await createSitemap();
     res.setHeader("Content-Type", "text/xml");
-    const xml =await createSitemap();
-    res.write(xml);
+    res.write(sitemap);
     res.end();
     return {
         props: {},
-        };
     };
+};
 
+
+  
 
     async function createSitemap() {
         const { data: posts, error } = await supabase
