@@ -7,7 +7,7 @@ export default function Sitemap() {
   return null;
 }
 
-export const   getServerSideProps: GetServerSideProps = async ({ res }) => {
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     const sitemap = await createSitemap();
     res.setHeader("Content-Type", "text/xml");
     res.write(sitemap);
@@ -33,7 +33,6 @@ export const   getServerSideProps: GetServerSideProps = async ({ res }) => {
                 <lastmod>${
                     new Date(post.updated_at).toISOString().split("T")[0]
                 }</lastmod>
-                <priority>0.8</priority>
                 </url>
                 `;
             });
