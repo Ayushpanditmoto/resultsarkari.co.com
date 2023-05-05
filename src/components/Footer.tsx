@@ -19,7 +19,7 @@ function Footer() {
             <Link href="/privacy-policy">Privacy Policy</Link>
           </li>
           <li>
-            <Link href="/sitemap">Sitemap</Link>
+            <a href="/sitemap.xml">Sitemap</a>
           </li>
 
         </ul>
