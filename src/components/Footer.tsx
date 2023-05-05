@@ -1,9 +1,19 @@
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 function Footer() {
   const year = new Date().getFullYear();
+  const router = useRouter();
+
+  //if the path is /sitemap.xml then reload the entire page
+  React.useEffect(() => {
+    if (router.pathname === "/sitemap.xml") {
+      router.reload();
+    }
+  }, [router.pathname]);
+
   return (
     <>
       <FooterContainer>
@@ -19,7 +29,9 @@ function Footer() {
             <Link href="/privacy-policy">Privacy Policy</Link>
           </li>
           <li>
-            <a href="/sitemap.xml">Sitemap</a>
+            <Link href="/sitemap.xml">Sitemap</Link>
+           
+            
           </li>
 
         </ul>
