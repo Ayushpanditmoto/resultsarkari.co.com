@@ -44,7 +44,7 @@ function AdmitPage({ admit }: AdmitType) {
 
 export default AdmitPage
 
-export const getServerSide = async () => {
+export const getStaticProps = async () => {
     const { data: posts } = await supabase
     .from('posts')
     .select('*')

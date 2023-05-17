@@ -12,7 +12,7 @@ function Footer() {
     if (router.pathname === "/sitemap.xml") {
       router.reload();
     }
-  }, [router.pathname]);
+  }, [router.pathname,router]);
 
   return (
     <>
