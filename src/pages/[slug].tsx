@@ -154,15 +154,30 @@ const PostContain = styled.div`
 
 export default SinglePost;
 
-export const getStaticPaths: GetStaticPaths = async () => {
-    const { data, error } = await supabase.from("posts").select("slug");
-    const paths = data!.map((post) => ({
-        params: { slug: post.slug },
-    }));
-    return { paths, fallback: false };
-    };
+// export const getStaticPaths: GetStaticPaths = async () => {
+//     const { data, error } = await supabase.from("posts").select("slug");
+//     const paths = data!.map((post) => ({
+//         params: { slug: post.slug },
+//     }));
+//     return { paths, fallback: false};
+//     };
 
-export const getStaticProps: GetStaticProps = async ({
+// export const getStaticProps: GetStaticProps = async ({
+//     params,
+// }: GetStaticPropsContext) => {
+//     const { slug } = params!;
+//     const { data } = await supabase
+//         .from("posts")
+//         .select()
+//         .filter("slug", "eq", slug);
+//     const post = data![0];
+//     return {
+//         props: { post },
+//         revalidate: 1, // In seconds
+//     };
+// };
+
+export const getServerSideProps: GetStaticProps = async ({
     params,
 }: GetStaticPropsContext) => {
     const { slug } = params!;
@@ -174,5 +189,4 @@ export const getStaticProps: GetStaticProps = async ({
     return {
         props: { post },
     };
-};
-
+}

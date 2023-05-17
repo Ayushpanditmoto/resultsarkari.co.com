@@ -6,11 +6,11 @@ import CenterC from '@/Layout/center';
 // import supabase from '@/config/Supabase.config';
 
 const markdown = `
-# About Resultsarkari.co.com
+# About \n Resultsarkari.co.com
 
 Resultsarkari.co.com is a leading online platform that provides the latest and updated information on government jobs, exam results, and educational news in India. Our website is designed to provide easy access to job notifications, exam results, and educational updates for students, job seekers, and other interested parties.
 
-## Our Mission
+\n\n\n ## Our Mission
 
 Our mission is to provide reliable, up-to-date information on government jobs, exam results, and education news to our users. We aim to help our users stay informed and connected to the latest news and updates in the field of education and employment in India.
 
