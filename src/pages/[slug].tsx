@@ -15,8 +15,13 @@ import PostContainer from "@/Layout/layout";
 import styled from "styled-components";
 import { NextSeo } from "next-seo";
 import supabase from "@/config/Supabase.config";
+import NodeCache from 'node-cache'
+
 
 //Deafault value
+
+const cache = new NodeCache();
+
 
 function SinglePost({ post }: { post: PostType }) {
   const md = new MarkdownIt({
@@ -181,12 +186,22 @@ export const getServerSideProps: GetStaticProps = async ({
     params,
 }: GetStaticPropsContext) => {
     const { slug } = params!;
-    const { data } = await supabase
+    if(cache.has(slug as string)) {
+        return {
+            props: {
+                post: cache.get(slug as string)
+            }
+        }
+    
+    } else {
+      const { data } = await supabase
         .from("posts")
         .select()
         .filter("slug", "eq", slug);
     const post = data![0];
+    cache.set(slug as string, post, 60 * 60 * 24*7); // 3 day
     return {
         props: { post },
     };
+  }
 }
